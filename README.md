@@ -64,16 +64,50 @@ To launch our airflow as known, we should launch the **webserver and the schedul
 ![airflow on EC2 ](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/b1759224-14c2-4971-8b7c-85800ddcf7bc)
 ![airflow webserver1](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/11bca46b-6f5d-4f86-8b7d-9fa169500cf9)
 
+**Don't forget to change the "airflow.cfg" file on below properties : dags_folder and load_examples**
+I simply did this by accessing to my instance from **WinCP** using the instance key-pair : 
+
+![EC2 on winCP](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/029dc439-7ef8-497b-86bc-12032bbd6a23)
+
 ## 4-Connecting Snowflake to Airflow
 
-install apache-airflow-providers-snowflake==2.1.0 snowflake-connector-python==2.5.1 snowflake-sqlalchemy==1.2.5
-After that we can add a new connection to Snowflake from the airflow UI and extract our snowflake_conn_id="snowflake_conn" that we need for the last task on the DAG.
+install apache-airflow-providers-snowflake==2.1.0 snowflake-connector-python==2.5.1 snowflake-sqlalchemy==1.2.5 
+**If no, the **"Connection type"** on Airflow UI won't contain **"Snowflake"**, so don't skip this step ! 
+After that we can add a new connection to Snowflake from the airflow UI by using the credential of our snowflake account , and don't forget the  snowflake_conn_id="snowflake_conn" that we need for the last task on the DAG.
 
 ![airflow DAG ](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/5b1f32af-6002-4942-a1f9-05c6702eb032)
 
  see the DAG file on "hello_world.py" 
  
-## 5-
+## 5-Snowflake Query 
+
+![snowflake query](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/b9598ab8-b285-48f6-a710-552d393439a2)
+
+**The last query will be executed from the Airflow ! **
+
+## 6-Trigger the DAG and testing 
+
+After Triggering the DAG from Airflow UI, we can see different excution of the tasks, and our EMR cluster is created on AWS account : 
+![cluster ](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/6be49e50-75de-4bd6-9731-a2e7de8194c8)
+
+
+Here's is its configuration, same as the one defined on the lambda function code : 
+![cluster conf1](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/8105c973-df1d-4d48-bd87-2a9931a6783b)
+![cluster conf2](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/b59d6c57-5067-42e0-bc05-99feb43880b2)
+
+## 7-Final Table
+
+ After the "terminate_cluster" task is executed, we can see the final output on snowflake : 
+
+ ![final table snowflake](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/6c1a7731-ac88-42ef-83ca-fb99ccd031de)
+
+
+
+
+
+
+
+
 
 
 
