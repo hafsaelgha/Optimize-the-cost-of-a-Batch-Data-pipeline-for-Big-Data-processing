@@ -100,6 +100,7 @@ Here's is its configuration, same as the one defined on the lambda function code
  After the "terminate_cluster" task is executed, we can see the final output on snowflake : 
 
  ![final table snowflake](https://github.com/hafsaelgha/Batch-Data-Pipeline/assets/99973359/6c1a7731-ac88-42ef-83ca-fb99ccd031de)
+ 
 
 
 
