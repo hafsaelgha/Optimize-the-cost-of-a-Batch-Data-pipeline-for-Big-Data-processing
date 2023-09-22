@@ -9,7 +9,7 @@ In most business use case of cloud data engineering, we tends to design powerful
 - [ ] 2)when lot of heavy jobs run together then due to resource issue , the Spark Jobs might take **huge time** to complete in **Persistent EMR Cluster** , which might impact business ...
 
 In this project, I'm gonna introduce the **Transient Cluster**  to resolve both issues: 
-> - [ ]  **launch fresh EMR Cluster when needed to run Spark Jobs & when the step is complete, the cluster get terminated automatically !** 
+**launch fresh EMR Cluster when needed to run Spark Jobs & when the step is complete, the cluster get terminated automatically !** 
 
 **Let's embark on the project to discover this solution !** 
 
