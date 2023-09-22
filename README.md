@@ -1,5 +1,5 @@
 # Batch-Data-Pipeline
-Building a Batch Data Pipeline using Airflow, PySpark, EMR &amp; Snowflake
+
 # Introduction
 
 In most business use case of cloud data engineering, we tends to design powerful architectures that meet their business needs, ensure **Availability, Scalability and Cost effectivness**, combining these 3 constraints proves difficult sometimes. 
